@@ -1,0 +1,22 @@
+spring.cloud.vault:
+    generic:
+        enabled: true
+        backend: secret
+        profile-separator: '/'
+        default-context: application
+        application-name: my-app
+    authentication: APPROLE
+    config.lifecycle.enabled: true
+    app-role:
+        role-id: 39dda5e7-75e6-7720-b7af-f66724d7f3d6
+        secret-id: be68f54a-af19-c731-33a3-c4b6521b2332
+        role: admin
+        app-role-path: approle
+    host: localhost
+    port: 8200
+    scheme: http
+    uri: http://localhost:8200
+    connection-timeout: 5000
+    read-timeout: 15000
+    config:
+        order: -10
